@@ -1,11 +1,12 @@
 const mysql = require('mysql2');
 const fs = require('fs');
-
+//require("dotenv").config(); // username // password // database name
 
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'business_Organizer'
+    password: "Bethebest77!",
+    database: 'business_Organizer_db'
   });
   
   // simple query
