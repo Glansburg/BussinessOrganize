@@ -16,7 +16,7 @@ Through this project I learned:
 *  Not having enough time to finish project but it was fun.
  ## Instalation
 N/A
-
+VIDEO DEMO LINK HERE: chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/72c2d301-6071-4e32-yd90-8e88ed46d973 
 ## Usage
 Has to be ran in bash command line. run this: node index.js
 
