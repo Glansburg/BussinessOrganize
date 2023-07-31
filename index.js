@@ -79,7 +79,7 @@ function inquireMain() {
       type: "list",
       name: "selected",
       message: "Select what you want to do:",
-      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "Add an Employee", "EXIT"]
+      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "EXIT"]
     }
   ]
 
