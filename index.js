@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const dotenv = require('dotenv');
 dotenv.config();
 
+
 console.log(process.env.HOST);
 console.log(process.env.USER);
 console.log(process.env.PASSWORD);
@@ -78,7 +79,7 @@ function inquireMain() {
       type: "list",
       name: "selected",
       message: "Select what you want to do:",
-      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "EXIT"]
+      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "Add an Employee", "EXIT"]
     }
   ]
 
