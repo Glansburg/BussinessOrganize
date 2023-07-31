@@ -16,10 +16,11 @@ Through this project I learned:
 *  Not having enough time to finish project but it was fun.
  ## Instalation
 N/A
-VIDEO DEMO LINK HERE: chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/72c2d301-6071-4e32-yd90-8e88ed46d973 
+VIDEO DEMO LINK HERE: 
 ## Usage
 Has to be ran in bash command line. run this: node index.js
 
+[Untitled_ Jul 31, 2023 5_48 PM.webm](https://github.com/Glansburg/BussinessOrganize/assets/117139285/d6048d6a-3a8e-49ac-a38a-4d880d37eafe)
 
 
 ## Credits
