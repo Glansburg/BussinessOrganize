@@ -12,7 +12,7 @@ CREATE TABLE department (
 CREATE TABLE roles (
     id Int PRIMARY KEY AUTO_INCREMENT NOT NULL,
     role_title VARCHAR(30),
-    salary_decimal DECIMAL(5,2) NOT NULL,
+    salary INT NOT NULL,
     department_id INT NOT NULL,
     CONSTRAINT FK_roles_department
         FOREIGN KEY (department_id)
@@ -25,7 +25,7 @@ CREATE TABLE employee (
     last_name VARCHAR(30),
     role_id INT,
     manager_id INT,
-    CONSTRAINT FK_employee_role 
+    CONSTRAINT FK_employee_roles 
         FOREIGN KEY (role_id)
         REFERENCES roles(id),
     CONSTRAINT FK_manager 
