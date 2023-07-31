@@ -1,6 +1,5 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-const fs = require('fs');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -39,7 +38,20 @@ const showAllEmployees = function() {
   );
 } // showAllEmployees
 
+const showAllDepartments = function() {
+  const queryAllDepartments = `SELECT department_name.VALUES
+  FROM department`
 
+
+connection.query(
+  queryAllDepartments,
+  function (err, results, fields) {
+    console.table(results); // results contains rows returned by server
+    //console.log(fields); // fields contains extra meta data about results, if available
+    inquireMain();
+  }
+);
+}
 
 
 function inquireMain() {
@@ -48,15 +60,17 @@ function inquireMain() {
       type: "list",
       name: "selected",
       message: "Select what you want to do:",
-      choices: ["SHOW ALL EMPLOYEES", "EXIT"]
+      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "EXIT"]
     }
   ]
-  
+
   inquirer
   .prompt(questions)
   .then(answers=>{
     if(answers.selected==="SHOW ALL EMPLOYEES")
       showAllEmployees();
+      if(answers.selected==="View All Departments")
+      showAllDepartments();
     if(answers.selected==="EXIT")
       process.exit(1);
   })
@@ -74,109 +88,6 @@ inquireMain();
 // );
 
 
-// {
-//   type: 'list',
-//   name: 'shape',
-//   message: 'choose your choice of shape.',
-//   choices: [Circle, Square, Triangle],
-// },
-// // fourth object for shape color
-// {
-//   type: 'input',
-//   name: 'shapeColor',
-//   message: 'Enter SHAPE color for logo.',
-
-// },
-
-// inquirer.prompt(logo)
-//   .then(data => {
-//     console.log(data)
-//     const svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-//         <${data.shape} cx="150" cy="100" r="80" fill=${data.shapeColor} />
-      
-//         <text x="150" y="125" font-size="60" text-anchor="middle" fill=${data.textColor}>${data.text}</text>
-    
-    
-      
-//       </svg>`
-//     console.log("Generated logo.svg");
-
-
-//     fs.writeFile('Logo.svg', svg, (err) =>
-//       err ? console.error(err) : console.log('Success'))
-//   })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const logo = [
-//   {
-//     //first object for character input in logo
-//     type: 'input',
-//     name: 'text',
-//     message: 'Enter 3 characters for your logo.',
-//     validate: function (characters) {
-//       if (characters.length <= 3) {
-//         return true;
-//       }
-//       return "please enter 3 characters to begin";
-//     },
-//   },
-//   { //second object for text color
-
-//     type: 'input',
-//     name: 'textColor',
-//     message: 'Enter TEXT color for logo.',
-
-//   },
-
-  // third object will be for shape
-  // {
-  //   type: 'list',
-  //   name: 'shape',
-  //   message: 'choose your choice of shape.',
-  //   choices: [Circle, Square, Triangle],
-  // },
-  // // fourth object for shape color
-  // {
-  //   type: 'input',
-  //   name: 'shapeColor',
-  //   message: 'Enter SHAPE color for logo.',
-
-  // },
-
-
-
-
-
-
-
-
-// ]
-
-// // TODO: Create a function to initialize app
 
 
 // inquirer.prompt(logo)
@@ -196,3 +107,29 @@ inquireMain();
 //     fs.writeFile('Logo.svg', svg, (err) =>
 //       err ? console.error(err) : console.log('Success'))
 //   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

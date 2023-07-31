@@ -9,9 +9,7 @@ SELECT employee.id, first_name, last_name, role_title
 FROM employee
 join roles ON role.id = roles_id;
 
--- SELECT role_title salary_decimal
---FROM roles
--- join employee ON role_id = ?
+
 
 -- Show all employees
 SELECT employee.id, employee.first_name, employee.last_name, 
@@ -26,8 +24,8 @@ JOIN employee AS managers
 ON employee.manager_id = managers.id;
 
 
-
---User.find => route response
+SELECT department_name.VALUES
+  FROM department
 
 
 -- side note, if the roles.id matches
