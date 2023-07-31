@@ -28,5 +28,8 @@ SELECT department_name
   FROM department
 
 
+SELECT role_title
+FROM roles
+
 -- side note, if the roles.id matches
 -- the employee role_id bring in all the roles information

@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
   database: process.env.DATABASE
 });
 
-
+// shows all the employees with first, last name, department, title, salary and manager they belong to.
 const showAllEmployees = function() {
   // simple query
   const queryAllEmployees = `
@@ -38,6 +38,8 @@ const showAllEmployees = function() {
   );
 } // showAllEmployees
 
+
+// shows all the departments
 const showAllDepartments = function() {
   const queryAllDepartments = `SELECT department_name
   FROM department`
@@ -53,6 +55,22 @@ connection.query(
 );
 }
 
+const showAllRoles = function() {
+  const queryAllRoles = `SELECT role_title
+  FROM roles`
+  
+
+
+connection.query(
+  queryAllRoles,
+  function (err, results, fields) {
+    console.table(results); // results contains rows returned by server
+    //console.log(fields); // fields contains extra meta data about results, if available
+    inquireMain();
+  }
+);
+}
+
 
 function inquireMain() {
   const questions = [
@@ -60,7 +78,7 @@ function inquireMain() {
       type: "list",
       name: "selected",
       message: "Select what you want to do:",
-      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "EXIT"]
+      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "EXIT"]
     }
   ]
 
@@ -71,6 +89,8 @@ function inquireMain() {
       showAllEmployees();
       if(answers.selected==="View All Departments")
       showAllDepartments();
+      if(answers.selected==="View All Roles")
+      showAllRoles();
     if(answers.selected==="EXIT")
       process.exit(1);
   })
