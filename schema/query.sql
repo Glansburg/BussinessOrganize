@@ -24,7 +24,7 @@ JOIN employee AS managers
 ON employee.manager_id = managers.id;
 
 
-SELECT department_name.VALUES
+SELECT department_name
   FROM department
 
 

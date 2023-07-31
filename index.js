@@ -39,7 +39,7 @@ const showAllEmployees = function() {
 } // showAllEmployees
 
 const showAllDepartments = function() {
-  const queryAllDepartments = `SELECT department_name.VALUES
+  const queryAllDepartments = `SELECT department_name
   FROM department`
 
 
