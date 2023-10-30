@@ -12,8 +12,7 @@ Through this project I learned:
   
 ## Being new to web development I came across some issues you may see obvious such as:
 * Not finishing inquirer part of project.
-* Took me a long time to figure out how to set up foreign keys/ queries.
-*  Not having enough time to finish project but it was fun.
+
  ## Instalation
 N/A
 VIDEO DEMO LINK HERE: 
