@@ -1,7 +1,16 @@
 const mysql = require('mysql2');
+const express = require('express')
 const inquirer = require('inquirer');
 const dotenv = require('dotenv');
 dotenv.config();
+
+
+const PORT = process.env.PORT || 3001
+const app = express()
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 
 
 console.log(process.env.HOST);
@@ -60,6 +69,7 @@ const showAllRoles = function() {
   const queryAllRoles = `SELECT role_title
   FROM roles`
   
+  
 
 
 connection.query(
@@ -79,7 +89,7 @@ function inquireMain() {
       type: "list",
       name: "selected",
       message: "Select what you want to do:",
-      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "EXIT"]
+      choices: ["SHOW ALL EMPLOYEES", "View All Departments", "View All Roles", "Add A Department", "Add A Role", "Add An Employee", "Update An Employee Role" "EXIT"]
     }
   ]
 
@@ -92,6 +102,8 @@ function inquireMain() {
       showAllDepartments();
       if(answers.selected==="View All Roles")
       showAllRoles();
+      if(answers.selected==="Add A Department")
+      AddADepartment();
     if(answers.selected==="EXIT")
       process.exit(1);
   })
